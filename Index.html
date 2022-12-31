@@ -4,13 +4,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
     <style>
       p{
-        text-align: center;
-        font-size: 100px;
+        font-size: 70px;
         font-family: Geo;
+        margin: auto;
       }
     </style>
   </head>
   <body>
-    <p>20:00:00</p>
+    <p id="time">20:00:00</p>
+    <script>
+      function setTime(){
+        let time = new Date();
+        let year = time.getFullYear();
+        let month = time.getMonth() + 1;
+        let date = time.getDate();
+        let day = time.getDay();
+        switch (day){
+          case 0:
+            day = "日";
+            break;
+          case 1:
+            day = "月";
+            break;
+          case 2:
+            day = "火";
+            break;
+          case 3:
+            day = "水";
+            break;
+          case 4:
+            day = "木";
+            break;            
+          case 5:
+            day = "金";
+            break;  
+          case 6:
+            day = "土";
+            break;
+        }
+        let hour = time.getHours();
+        let minute = time.getMinutes();
+        let second = time.getSeconds();
+        const text = year + "年" + month + "月" + date + "日(" + day + ")" + hour + ":" + minute + ":" + second;
+        document.getElementById("time").innerHTML = text;
+      }
+      setInterval(setTime(),100);
+    </script>
   </body>
 </html>
