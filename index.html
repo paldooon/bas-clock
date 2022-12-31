@@ -6,12 +6,12 @@
       p{
         font-size: 70px;
         font-family: Geo;
-        margin: auto;
+        margin: 400px auto;
       }
     </style>
   </head>
   <body>
-    <p id="time">20:00:00</p>
+    <p id="time"></p>
     <script>
       function setTime(){
         let time = new Date();
@@ -21,34 +21,34 @@
         let day = time.getDay();
         switch (day){
           case 0:
-            day = "日";
+            day = "Sun";
             break;
           case 1:
-            day = "月";
+            day = "Mon";
             break;
           case 2:
-            day = "火";
+            day = "Tue";
             break;
           case 3:
-            day = "水";
+            day = "Wed";
             break;
           case 4:
-            day = "木";
+            day = "Thu";
             break;            
           case 5:
-            day = "金";
+            day = "Fri";
             break;  
           case 6:
-            day = "土";
+            day = "Sat";
             break;
         }
         let hour = time.getHours();
         let minute = time.getMinutes();
         let second = time.getSeconds();
-        const text = year + "年" + month + "月" + date + "日(" + day + ")" + hour + ":" + minute + ":" + second;
+        const text = year + "/" + month + "/" + date + "(" + day + ")" + hour + ":" + minute + ":" + second;
         document.getElementById("time").innerHTML = text;
       }
-      setInterval(setTime(),100);
+      setInterval("setTime()",100);
     </script>
   </body>
 </html>
