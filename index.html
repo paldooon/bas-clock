@@ -45,10 +45,11 @@
         let hour = time.getHours();
         let minute = time.getMinutes();
         let second = time.getSeconds();
-        const text = year + "/" + month + "/" + date + "(" + day + ")" + hour + ":" + minute + ":" + second;
+        let mili = time.getTime();
+        const text = year + "/" + month + "/" + date + "(" + day + ")" + hour + ":" + minute + ":" + second + "." + mili;
         document.getElementById("time").innerHTML = text;
       }
-      setInterval("setTime()",100);
+      setInterval("setTime()",1);
     </script>
   </body>
 </html>
