@@ -4,9 +4,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Geo&display=swap" rel="stylesheet">
     <style>
       p{
+        text-align: center;
         font-size: 70px;
         font-family: Geo;
-        margin: 400px auto;
+        margin: 300px 0;
       }
     </style>
   </head>
@@ -45,11 +46,10 @@
         let hour = time.getHours();
         let minute = time.getMinutes();
         let second = time.getSeconds();
-        let mili = time.getMilliseconds();
-        const text = year + "/" + month + "/" + date + "(" + day + ")" + hour + ":" + minute + ":" + second + "." + mili;
+        const text = year + "/" + month + "/" + date + "(" + day + ")" + hour + ":" + minute + ":" + second;
         document.getElementById("time").innerHTML = text;
       }
-      setInterval("setTime()",1);
+      setInterval("setTime()",100);
     </script>
   </body>
 </html>
