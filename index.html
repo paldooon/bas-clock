@@ -45,7 +45,7 @@
         let hour = time.getHours();
         let minute = time.getMinutes();
         let second = time.getSeconds();
-        let mili = time.getTime();
+        let mili = time.getMilliseconds();
         const text = year + "/" + month + "/" + date + "(" + day + ")" + hour + ":" + minute + ":" + second + "." + mili;
         document.getElementById("time").innerHTML = text;
       }
